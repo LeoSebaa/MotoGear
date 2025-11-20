@@ -1,0 +1,614 @@
+
+
+.navigation{
+	width: 100%;
+    height: 150px;
+    background-color:#202946;
+    position:static;
+    
+    
+    
+}
+.navigation .logo{
+    
+    height: 130px;
+    background: url(fotot/headerlogo.png) left/cover no-repeat;
+    display: block;
+    width: 130px;
+    font-size: 80px;
+    margin-left: 80px;
+    padding-top: 10px;
+   
+
+}
+.navigation .nav{
+    float: right;
+    margin-top: -80px;
+    padding-right: 20px;
+    margin-right: 70px;
+
+}
+
+
+.nav a{
+    text-decoration: none;
+    padding-right: 20px;
+    font-size: 20px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    
+   
+}
+
+.nav a:hover{
+    color: #e86013;
+    
+}
+.section{
+    height: fit-content;
+    width: 100%;
+}
+
+.foto{
+    background: url(fotot/home-sc1.png) left/cover;
+    height: 450px;
+    margin-top: 0;
+    padding-top: 150px;
+    padding-right: 20px;
+    
+}
+
+
+.txtS1{
+    
+    font-size: 20px;
+    background-color: #20294691;
+    display: block;
+    width: 400px;
+    margin-left: 40px;
+    height: 200px;
+    padding-top: 40px;
+    border-radius: 50px;
+}
+
+.p1{
+   font-size: 30px;
+   margin-left: 20px;
+   color: white;
+
+}
+.p2{
+    line-height: 10px;
+    font-size: 20px;
+    margin-left: 20px;
+    color: #e86013;
+}
+
+        .section2 {
+    background-color: #202946;
+    text-align: center;
+    justify-content: center;
+    padding: 20px 20px;
+    height: fit-content;
+}
+
+.section2 .p1 {
+    padding-top: 20px;
+    color: white;
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+
+.someProducts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    background-color: #202946;
+    padding-top: 40px ;
+    
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    background-color: #ffffff;
+    border-radius: 40px;
+    border: 6px solid #e86013;
+    text-align: center;
+    padding-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    text-decoration: none; 
+    color: #202946; 
+}
+
+.product:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    border-color: #e86013;
+}
+
+
+.product img {
+    width: 250px;
+    height: 250px;
+    margin: 20px auto 10px auto;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+
+.product .lloji_produktit {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+    color: #202946;
+}
+
+
+.product .cmimi_produktit {
+    font-size: 18px;
+    color: #e86013;
+    margin-bottom: 10px;
+}
+.section3 {
+  background: #202946;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section3 h2 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  color: #e86013;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+
+.guide {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  
+  margin: 0 auto;
+}
+
+
+.card {
+  background: #ffffff;
+  color: #202946;
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 6px solid #e86013;
+  width: 320px; 
+  transition: 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #e86013;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5rem;
+  color: #333;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  border-left-color: #202946;
+}
+
+.card:hover h3 {
+  color: #202946;
+}
+
+
+.section4{
+    height: fit-content;
+    text-align: center;
+    margin-top: -70px;
+}
+
+.section4 h2{
+    background-color: #e86013;
+    height: 100px;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    padding-top: 25px;
+}
+
+
+.logos{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+
+.logos img{
+   width: 200px;
+  height: 200px;
+  object-fit: contain;  
+  
+}
+
+
+
+.footer{
+    margin-top: 20px;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  gap: 50px;
+  background-color: #202946;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+}
+
+
+.short-about{
+    height: fit-content;
+    max-width: 800px;
+    min-width: 350px;
+} 
+
+.short-about h2{
+    font-size: 40px;
+    color: #e86013;
+}
+.short-about p{
+     font-size: 25px;
+     color: white;
+}
+
+.follow-us{
+    height: fit-content;
+    width: fit-content;
+    display: block;
+}
+.follow-us h2{
+    font-size: 40px;
+    color: #e86013;
+}
+
+.link img{
+   width: 70px;
+  height: 70px;
+  padding-right: 20px;
+  border-radius: 50%;
+  object-fit: contain;  
+  
+}
+
+
+.comment{
+    height: fit-content;
+    width: 350px;
+}
+
+.comment .email-input{
+    width: 100%;
+    float: right;
+    height: 50px;
+    border: 5px;
+    margin-bottom: 10px;
+}
+
+.comment .comment-input{
+    float: right;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.comment .button{
+    float: right;
+    background-color: #e86013;
+    color: #202946;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    transition: 0.3s ease;
+}
+
+.button:hover{
+    background-color: #202946;
+    color: #e86013;
+    transform: translateY(-7px);
+}
+
+
+.copyright{
+    background-color: #202946;
+    color: #e86013;
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    height: 50px;
+    margin-top: -30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 800px) {
+    .navigation{
+	width: 100%;
+    height: 120px;
+    background-color:#202946;
+    
+    
+    
+}
+.navigation .logo{
+    
+    height: 100px;
+    background: url(fotot/headerlogo.png) left/cover no-repeat;
+    display: block;
+    width: 100px;
+    margin-left: 50px;
+    padding-top: 15px;
+   
+
+}
+.navigation .nav{
+    float: right;
+    margin-top: -70px;
+
+    margin-right: 20px;
+
+}
+
+
+.nav a{
+    text-decoration: none;
+    padding-right: 10px;
+    font-size: 20px;
+    color: white;
+    
+   
+}
+
+
+.foto{
+    background: url(fotot/home-sc1.png) left/cover;
+    height: 300px;
+    padding-top: 150px;
+    
+    
+}
+
+.txtS1{
+    
+    
+    background-color: #20294691;
+    display: block;
+    width: 300px;
+    
+    height: 100px;
+    padding-top: 3px;
+    padding-left: 0px;
+    border-radius: 40px;
+}
+
+.p1{
+   font-size: 20px;
+   
+   color: white;
+
+}
+.p2{
+
+    font-size: 15px;
+    
+    color: #e86013;
+}
+
+}
+
+
+
+
+       @media (max-width: 650px) {
+    .navigation{
+	width: 100%;
+    height: 100px;
+    background-color:#202946;
+    
+    }  
+    
+
+.navigation .logo{
+    
+    height: 80px;
+    background: url(fotot/headerlogo.png) left/cover no-repeat;
+    display: block;
+    width: 80px;
+    
+    margin-left: 50px;
+    padding-top: 15px;
+   
+
+}
+.navigation .nav{
+    float: right;
+    margin-top: -60px;
+
+    margin-right: 20px;
+
+}
+
+
+.nav a{
+    text-decoration: none;
+    padding-right: 10px;
+    font-size: 17px;
+    color: white;
+    
+   
+}
+
+
+
+
+.foto{
+    background: url(fotot/home-sc1.png) left/cover;
+    height: 250px;
+    padding-top: 150px;
+    
+    
+}
+
+.txtS1{
+    
+    
+    background-color: #20294691;
+    display: block;
+    width: 200px;
+    
+    height: 90px;
+    padding-top: 10px;
+    padding-left: 0px;
+    border-radius: 40px;
+}
+
+.p1{
+   font-size: 16px;
+   
+   color: white;
+
+}
+.p2{
+
+    font-size: 10px;
+    line-height: 4px;
+    color: #e86013;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     @media (max-width: 500px) {
+    .navigation{
+	width: 100%;
+    height: 70px;
+    background-color:#202946;
+    
+    
+    
+}
+.navigation .logo{
+    
+    height: 50px;
+    background: url(fotot/headerlogo.png) left/cover no-repeat;
+    display: block;
+    width: 50px;
+    
+    margin-left: 15px;
+    padding-top: 15px;
+   
+
+}
+.navigation .nav{
+    float: right;
+    margin-top: -45px;
+
+    margin-right: 10px;
+
+}
+
+
+.nav a{
+    text-decoration: none;
+    padding-right: 10px;
+    font-size: 13px;
+    color: white;
+    
+   
+}
+.foto{
+    background: url(fotot/home-sc1.png) left/cover;
+    height: 160px;
+    padding-top: 150px;
+    
+    
+}
+
+.txtS1{
+    
+    
+    background-color: #20294691;
+    display: block;
+    width: 200px;
+    margin-top: -50px;
+    margin-left: 10px;
+    height: 90px;
+    padding-top: 10px;
+    padding-left: 0px;
+    border-radius: 40px;
+}
+
+.p1{
+   font-size: 16px;
+   
+   color: white;
+
+}
+.p2{
+
+    font-size: 10px;
+    line-height: 4px;
+    color: #e86013;
+}
+     }
+
+
+
+
+
