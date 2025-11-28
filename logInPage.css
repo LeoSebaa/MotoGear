@@ -13,7 +13,7 @@ body{
 .navigation .logo{
     
     height: 130px;
-    background: url(fotot/headerlogo.png) left/cover no-repeat;
+    background: url(fotot//headerlogo.png) left/cover no-repeat;
     display: block;
     width: 130px;
     font-size: 80px;
@@ -66,7 +66,7 @@ body{
 
 
  section {
-    background: url('fotot/home-sc1.png') center/cover no-repeat;
+    background: url('fotot/login_regjister_bcg.jpg') center/cover no-repeat;
 backdrop-filter: blur(8px);
       height: 800px;
       display: flex;
@@ -121,7 +121,6 @@ backdrop-filter: blur(8px);
 
 
 .footer{
-    margin-top: 20px;
   height: fit-content;
   display: flex;
   flex-wrap: wrap;
@@ -263,12 +262,10 @@ backdrop-filter: blur(8px);
 }
 
 
-.foto{
-    background: url(fotot/home-sc1.png) left/cover;
-    height: 300px;
-    padding-top: 150px;
-    
-    
+section{
+    background: url(fotot/login_regjister_bcg.jpg) center/cover no-repeat;
+    height: 500px;
+   
 }
 
 .txtS1{
@@ -342,15 +339,6 @@ backdrop-filter: blur(8px);
 }
 
 
-
-
-.foto{
-    background: url(fotot/home-sc1.png) left/cover;
-    height: 250px;
-    padding-top: 150px;
-    
-    
-}
 
 .txtS1{
     
@@ -433,13 +421,7 @@ backdrop-filter: blur(8px);
     
    
 }
-.foto{
-    background: url(fotot/home-sc1.png) left/cover;
-    height: 160px;
-    padding-top: 150px;
-    
-    
-}
+
 
 .txtS1{
     
@@ -480,6 +462,10 @@ backdrop-filter: blur(8px);
       .login-box input{
         width: 90%;
       }
+
+
+
+
      }
 
 

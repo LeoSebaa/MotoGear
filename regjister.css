@@ -1,13 +1,49 @@
+body{
+    margin: 0;
+}
+.navigation{
+	width: 100%;
+    height: 150px;
+    background-color:#202946;
+    position:static;
+    
+    
+    
+}
+.navigation .logo{
+    
+    height: 130px;
+    background: url(fotot/headerlogo.png) left/cover no-repeat;
+    display: block;
+    width: 130px;
+    font-size: 80px;
+    margin-left: 80px;
+    padding-top: 10px;
+   
 
-.navbar{
-    background-color: darkblue;
-    text-align: center;
-    padding: 20px;
+}
+.navigation .nav{
+    float: right;
+    margin-top: -80px;
+    padding-right: 20px;
+    margin-right: 70px;
+
 }
 
-.navbar a{
+
+.nav a{
     text-decoration: none;
+    padding-right: 20px;
+    font-size: 20px;
     color: white;
+    font-family: 'Courier New', Courier, monospace;
+    
+   
+}
+
+.nav a:hover{
+    color: #e86013;
+    
 }
 
 .txt{
@@ -15,17 +51,30 @@
 }
 
 .tabela{
-    background-color: darkblue;
+    
+    background: rgba(255, 255, 255, 0.6);
     width: 800px;
     margin: 100px auto;
     border-radius: 20px;
     padding: 30px 0;
+}
+.tabela h2{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    color: #e86013;
 }
 
 .tabela div{
     width: 500px;
     margin: auto;
     padding-top: 20px;
+}
+.ele p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    color: #202946;
+    font-weight: bold;
 }
 
 .ele input,
@@ -49,19 +98,104 @@
     margin: auto;
 }
 
+.checkbox label{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    color: #202946;
+    font-weight: bold;
+}
+
 .shkrimet{
     color: white;
 }
+.tabela input[type="submit"] {
+      background: #e86013;
+      color: rgb(255, 255, 255);
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 16px;
+    }
+
+    .tabela input[type="submit"]:hover {
+      background: #202946;
+    }
 
 
 body {
-    background-image: url(backgroundlogin.jpg);
+    background-image: url(fotot/login_regjister_bcg.jpg);
     background-size: cover;
     background-position: center;
 }
 
 
-@media (max-width: 768px){
+@media (max-width: 800px){
+
+
+        .navigation{
+	width: 100%;
+    height: 120px;
+    background-color:#202946;
+    
+    }
+    
+
+.navigation .logo{
+    
+    height: 100px;
+    background: url(fotot/headerlogo.png) left/cover no-repeat;
+    display: block;
+    width: 100px;
+    margin-left: 50px;
+    padding-top: 15px;
+   
+
+}
+.navigation .nav{
+    float: right;
+    margin-top: -70px;
+
+    margin-right: 20px;
+
+}
+
+
+.nav a{
+    text-decoration: none;
+    padding-right: 10px;
+    font-size: 20px;
+    color: white;
+    
+   
+}
+
+
+
+.txtS1{
+    
+    
+    background-color: #20294691;
+    display: block;
+    width: 300px;
+    
+    height: 100px;
+    padding-top: 3px;
+    padding-left: 0px;
+    border-radius: 40px;
+}
+
+.p1{
+   font-size: 20px;
+   
+   color: white;
+
+}
+.p2{
+
+    font-size: 15px;
+    
+    color: #e86013;
+}
     
     .tabela{
         width: 90%;
@@ -89,8 +223,147 @@ body {
         height: 120px;
     }
 }
+@media (max-width: 650px) {
+    .navigation{
+	width: 100%;
+    height: 100px;
+    background-color:#202946;
+    
+    }  
+    
 
-@media (max-width: 480px){
+.navigation .logo{
+    
+    height: 80px;
+    background: url(fotot/headerlogo.png) left/cover no-repeat;
+    display: block;
+    width: 80px;
+    
+    margin-left: 50px;
+    padding-top: 15px;
+   
+
+}
+.navigation .nav{
+    float: right;
+    margin-top: -60px;
+
+    margin-right: 20px;
+
+}
+
+
+.nav a{
+    text-decoration: none;
+    padding-right: 10px;
+    font-size: 17px;
+    color: white;
+    
+   
+}
+ 
+    
+
+
+.txtS1{
+    
+    
+    background-color: #20294691;
+    display: block;
+    width: 200px;
+    
+    height: 90px;
+    padding-top: 10px;
+    padding-left: 0px;
+    border-radius: 40px;
+}
+
+.p1{
+   font-size: 16px;
+   
+   color: white;
+
+}
+.p2{
+
+    font-size: 10px;
+    line-height: 4px;
+    color: #e86013;
+}
+}
+
+
+
+@media (max-width: 500px){
+     .navigation{
+	width: 100%;
+    height: 70px;
+    background-color:#202946;
+    
+    
+    
+}
+.navigation .logo{
+    
+    height: 50px;
+    background: url(fotot/headerlogo.png) left/cover no-repeat;
+    display: block;
+    width: 50px;
+    
+    margin-left: 15px;
+    padding-top: 15px;
+   
+
+}
+.navigation .nav{
+    float: right;
+    margin-top: -45px;
+
+    margin-right: 10px;
+
+}
+
+
+.nav a{
+    text-decoration: none;
+    padding-right: 10px;
+    font-size: 13px;
+    color: white;
+    
+   
+}
+
+    
+    
+
+
+.txtS1{
+    
+    
+    background-color: #20294691;
+    display: block;
+    width: 200px;
+    margin-top: -50px;
+    margin-left: 10px;
+    height: 90px;
+    padding-top: 10px;
+    padding-left: 0px;
+    border-radius: 40px;
+}
+
+.p1{
+   font-size: 16px;
+   
+   color: white;
+
+}
+.p2{
+
+    font-size: 10px;
+    line-height: 4px;
+    color: #e86013;
+}
+     
     .navbar{
         padding: 10px;
     }
@@ -103,4 +376,109 @@ body {
     .checkbox{
         font-size: 12px;
     }
+
+}
+
+
+
+
+
+
+
+
+
+.footer{
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  gap: 50px;
+  background-color: #202946;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+}
+
+
+.short-about{
+    height: fit-content;
+    max-width: 800px;
+    min-width: 350px;
+} 
+
+.short-about h2{
+    font-size: 40px;
+    color: #e86013;
+}
+.short-about p{
+     font-size: 25px;
+     color: white;
+}
+
+.follow-us{
+    height: fit-content;
+    width: fit-content;
+    display: block;
+}
+.follow-us h2{
+    font-size: 40px;
+    color: #e86013;
+}
+
+.link img{
+   width: 70px;
+  height: 70px;
+  padding-right: 20px;
+  border-radius: 50%;
+  object-fit: contain;  
+  
+}
+
+
+.comment{
+    height: fit-content;
+    width: 350px;
+}
+
+.comment .email-input{
+    width: 100%;
+    float: right;
+    height: 50px;
+    border: 5px;
+    margin-bottom: 10px;
+}
+
+.comment .comment-input{
+    float: right;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.comment .button{
+    float: right;
+    background-color: #e86013;
+    color: #202946;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    transition: 0.3s ease;
+}
+
+.button:hover{
+    background-color: #202946;
+    color: #e86013;
+    transform: translateY(-7px);
+}
+
+
+.copyright{
+    background-color: #202946;
+    color: #e86013;
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    height: 50px;
+    margin-top: -30px;
 }
