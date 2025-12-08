@@ -21,71 +21,62 @@
       
     </nav>
     </header>
+     <div class="tabela">
+    <h2>Register</h2>
 
-    <div class="tabela">
-
-        <h2 >Register</h2>
-      
-<div class="shkrimet">
+    <div class="shkrimet">
         <div class="ele">
-                
-                <input type="text" required placeholder="Name and Surname">
+            <input type="text" id="name" placeholder="Name">
+            <small class="error" id="nameError"></small>
         </div>
 
-            <div class="ele">
-                
-                <input type="email" required placeholder="Email">
-            </div>
-
-  
-            <div class="ele">
-                <label for=""></label>
-                <input type="password" required placeholder="Password">
-            </div>
-
-            <div class="ele">
-                <p>Birthday:</p>
-                <input type="date" required>
-            </div>
-
-
-            <div class="ele">
-                <p>Phone Number</p>
-                <input type="text" required placeholder="Phone Number" style="background-color: white;">
-            </div>
-
-          <div class="ele">
-           <p>Pick a city:</p>
-                <select name="qytetin" id="">
-                  <option value="">Prizren</option>
-                  <option value="">Prishtine</option>
-                  <option value="">Gjakove</option>
-                  <option value="">Peja</option>
-                   <option value="">Gjilan</option>
-                  <option value="">Ferizaj</option>
-                  <option value="">Mitrovic</option>
-                  <option value="">Viti</option>
-
-                  </select>
-          </div>
-          <div class="ele">
-                <p>Address:</p>
-                <input type="text" required placeholder="Address" style="background-color: white;">
-           </div>
-
-          </div>
-            <br>
-
-        <div class="checkbox">
-            <input type="checkbox"><label>I agree with the terms and conditions</label>
-            <p><input type="checkbox"><label>I wish to receive emails related to the company</label></p>
-        </div>
-     
         <div class="ele">
-               <input type="submit" value="REGISTER" name="REGISTER" >
+            <input type="text" id="surname" placeholder="Surname">
+            <small class="error" id="surnameError"></small>
         </div>
 
+        <div class="ele">
+            <input type="email" id="email" placeholder="Email">
+            <small class="error" id="emailError"></small>
+        </div>
+
+        <div class="ele">
+            <input type="password" id="password" placeholder="Password">
+            <small class="error" id="passwordError"></small>
+        </div>
+
+        <div class="ele">
+            <p>Birthday:</p>
+            <input type="date" id="birthday">
+            <small class="error" id="birthdayError"></small>
+        </div>
+
+        <div class="ele">
+            <p>Phone Number</p>
+            <input type="text" id="phone" placeholder="Phone Number" style="background-color: white;">
+            <small class="error" id="phoneError"></small>
+        </div>
     </div>
+
+    <br>
+
+    <div class="checkbox">
+        <p>
+            <input type="checkbox" id="terms"> 
+            <label>I agree with the terms and conditions</label>
+            <small class="error" id="termsError"></small>
+        </p>
+
+        <p>
+            <input type="checkbox" id="emails"> 
+            <label>I wish to receive emails related to the company</label>
+        </p>
+    </div>
+
+    <div class="ele">
+        <input type="submit" id="registerBtn" value="REGISTER">
+    </div>
+</div>
 
 
 
@@ -118,4 +109,8 @@
 </footer>
 <div class="copyright"><p>© 2025 Adventure Gear. All rights reserved.</p></div>
 </body>
+
+
+
+<script src="regjister.js"></script>
 </html>
