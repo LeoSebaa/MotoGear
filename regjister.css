@@ -127,6 +127,12 @@ body {
     background-size: cover;
     background-position: center;
 }
+.error{
+    color: red;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 5px;
+}
 
 
 @media (max-width: 800px){
