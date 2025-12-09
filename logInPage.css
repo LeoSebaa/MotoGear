@@ -462,6 +462,12 @@ section{
       .login-box input{
         width: 90%;
       }
+.error {
+    color: red;
+    font-size: 13px;
+    margin-top: -8px;
+    display: block;
+}
 
 
 

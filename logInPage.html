@@ -6,69 +6,72 @@
     <title>Adventure Gear</title>
     <link rel="stylesheet" href="logInPage.css">
 </head>
+
 <body>
-     <header class="navigation">
-    <div class="logo" ></div>
-    <nav  class="nav" >
-       <a href="home.html" >Home</a>
-      <a href="@">Products</a>
-      <a href="aboutus.html">About</a>
-      <a href="@">Cart</a>
-      <a href="logInPage.html">LogIn</a>
-    
-      
+
+<header class="navigation">
+    <div class="logo"></div>
+    <nav class="nav">
+        <a href="home.html">Home</a>
+        <a href="@">Products</a>
+        <a href="aboutus.html">About</a>
+        <a href="@">Cart</a>
+        <a href="logInPage.html">LogIn</a>
     </nav>
-    </header>
+</header>
 
- <section>
-    <form class="login-box">
-      <h2>Login</h2>
-      <input type="text" placeholder="Username" required />
-      <input type="password" placeholder="Password" required />
-      <p class="register-text" style="font-size:14px; margin-top:5px; color:#555;">Still not registered? 
-                                 <a href="regjister.html" style="color:#e86013; text-decoration:none;">Register</a></p>
-      <input type="submit" value="Log In" />
+<section>
+
+   
+    <form class="login-box" id="loginForm">
+        <h2>Login</h2>
+
+        <input type="text" id="username" placeholder="Username" />
+        <span class="error" id="usernameError"></span>
+
+        <input type="password" id="password" placeholder="Password" />
+        <span class="error" id="passwordError"></span>
+
+        <p class="register-text" style="font-size:14px; margin-top:5px; color:#555;">
+            Still not registered?
+            <a href="regjister.html" style="color:#e86013; text-decoration:none;">Register</a>
+        </p>
+
+        <input type="submit" id="loginBtn" value="Log In" />
     </form>
-  </section>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <footer class="footer">
-  <div class="short-about">
-       <h2>About Us</h2>
-       <p>Premium motorcycle gear & accessories — safety-focused, rider-approved.
-         We provide certified helmets, jackets, and performance parts for every rider.</p>
-  </div>
-
-  <div class="follow-us">
-    <h2>Follow Us</h2>
-    <a href="" class="link"><img src="footer-social/insta.avif" alt=""></a>
-    <a href="" class="link"><img src="footer-social/facebook.png" alt=""></a>
-    <a href="" class="link"><img src="footer-social/tiktok.png" alt=""></a>
-    <a href="" class="link"><img src="footer-social/youtube.png" alt=""></a>
-  </div>
-
-  <div class="comment">
-    <input type="text" placeholder="Your Email" class="email-input">
-   <textarea placeholder="Your comment" class="comment-input"></textarea>
-   <button class="button">Submit</button>
-
-  </div>
-
 
   
+    <script src="login.js"></script>
+
+</section>
+
+<footer class="footer">
+
+    <div class="short-about">
+        <h2>About Us</h2>
+        <p>Premium motorcycle gear & accessories — safety-focused, rider-approved.
+            We provide certified helmets, jackets, and performance parts for every rider.</p>
+    </div>
+
+    <div class="follow-us">
+        <h2>Follow Us</h2>
+        <a href="" class="link"><img src="footer-social/insta.avif" alt=""></a>
+        <a href="" class="link"><img src="footer-social/facebook.png" alt=""></a>
+        <a href="" class="link"><img src="footer-social/tiktok.png" alt=""></a>
+        <a href="" class="link"><img src="footer-social/youtube.png" alt=""></a>
+    </div>
+
+    <div class="comment">
+        <input type="text" placeholder="Your Email" class="email-input">
+        <textarea placeholder="Your comment" class="comment-input"></textarea>
+        <button class="button">Submit</button>
+    </div>
+
 </footer>
-<div class="copyright"><p>© 2025 Adventure Gear. All rights reserved.</p></div>
+
+<div class="copyright">
+    <p>© 2025 Adventure Gear. All rights reserved.</p>
+</div>
+
 </body>
 </html>
