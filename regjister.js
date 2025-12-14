@@ -49,22 +49,16 @@ document.getElementById("registerBtn").addEventListener("click", function (e) {
     }
 
     const passwordVal = password.value;
-    const numCount = (passwordVal.match(/\d/g) || []).length;
-    const hasUpper = /[A-Z]/.test(passwordVal);
+const passwordRegex = /^(?=(?:.*\d){2,})(?=.*[A-Z]).{6,}$/;
 
-    if (passwordVal.trim() === "") {
-        passwordError.textContent = "Enter your password.";
-        valid = false;
-    } else if (passwordVal.length < 6) {
-        passwordError.textContent = "Password must have at least 6 characters.";
-        valid = false;
-    } else if (!hasUpper) {
-        passwordError.textContent = "Password must have at least one uppercase letter.";
-        valid = false;
-    } else if (numCount < 2) {
-        passwordError.textContent = "Password needs to have at least 2 numbers.";
-        valid = false;
-    }
+if (passwordVal.trim() === "") {
+    passwordError.textContent = "Enter your password.";
+    valid = false;
+} else if (!passwordRegex.test(passwordVal)) {
+    passwordError.textContent =
+        "Password must be at least 6 characters, contain 1 uppercase letter and 2 numbers.";
+    valid = false;
+}
 
     if (birthday.value === "") {
         birthdayError.textContent = "Select your birth date.";

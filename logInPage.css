@@ -46,6 +46,13 @@ body{
     
 }
 
+span{
+    color: red;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 5px;
+}
+
 
 
 

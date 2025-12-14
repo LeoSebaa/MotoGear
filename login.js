@@ -3,33 +3,39 @@
 document.getElementById("loginBtn").addEventListener("click", function (e) {
     e.preventDefault();
 
-    const username = document.getElementById("username");
+    const email = document.getElementById("email");
     const password = document.getElementById("password");
 
-    const usernameError = document.getElementById("usernameError");
+    const emailError = document.getElementById("emailError");
     const passwordError = document.getElementById("passwordError");
 
 
-    usernameError.textContent = "";
+    emailError.textContent = "";
     passwordError.textContent = "";
 
     let valid = true;
 
-    if (username.value.trim() === "") {
-        usernameError.textContent = "Please enter your username.";
+    const emailRegex = /^[A-Za-z0-9]+@(gmail\.com|hotmail\.com)$/;
+
+    if (email.value.trim() === "") {
+        emailError.textContent = "Enter your email.";
         valid = false;
-    } else if (username.value.length < 3) {
-        usernameError.textContent = "Username must have at least 3 characters.";
+    } else if (!emailRegex.test(email.value)) {
+        emailError.textContent = "Email must be alphanumeric and end with @gmail.com or @hotmail.com.";
         valid = false;
     }
 
-    if (password.value.trim() === "") {
-        passwordError.textContent = "Please enter your password.";
-        valid = false;
-    } else if (password.value.length < 6) {
-        passwordError.textContent = "Password must be at least 6 characters long.";
-        valid = false;
-    }
+        const passwordVal = password.value;
+        const passwordRegex = /^(?=(?:.*\d){2,})(?=.*[A-Z]).{6,}$/;
+
+if (passwordVal.trim() === "") {
+    passwordError.textContent = "Enter your password.";
+    valid = false;
+} else if (!passwordRegex.test(passwordVal)) {
+    passwordError.textContent =
+        "Password must be at least 6 characters, contain 1 uppercase letter and 2 numbers.";
+    valid = false;
+}
 
    
     if (valid) {
