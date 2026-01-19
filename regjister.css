@@ -387,6 +387,47 @@ body {
 
 
 
+@media (max-width: 410px) {
+    .navigation{
+	width: 100%;
+    height: 60px;
+    background-color:#202946;
+    
+    
+    
+}
+.navigation .logo{
+    
+    height: 40px;
+    background: url(fotot/headerlogo.png) left/cover no-repeat;
+    display: block;
+    width: 40px;
+    
+    margin-left: 15px;
+    padding-top: 15px;
+   
+
+}
+.navigation .nav{
+    float: right;
+    margin-top: -40px;
+
+    margin-right: 10px;
+
+}
+
+
+.nav a{
+    text-decoration: none;
+    padding-right: 5px;
+    font-size: 10px;
+    color: white;
+    
+   
+}
+     }
+
+
 
 
 
