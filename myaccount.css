@@ -1,0 +1,295 @@
+body {
+    margin: 0;
+    background-image: url(fotot/login_regjister_bcg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.navigation {
+    width: 100%;
+    height: 150px;
+    background-color: #202946;
+    position: static;
+}
+
+.navigation .logo {
+    height: 130px;
+    background: url(fotot/headerlogo.png) left/cover no-repeat;
+    display: block;
+    width: 130px;
+    font-size: 80px;
+    margin-left: 80px;
+    padding-top: 10px;
+}
+
+.navigation .nav {
+    float: right;
+    margin-top: -80px;
+    padding-right: 20px;
+    margin-right: 70px;
+}
+
+.nav a {
+    text-decoration: none;
+    padding-right: 20px;
+    font-size: 20px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.nav a:hover {
+    color: #e86013;
+}
+
+.account-container {
+    background: rgba(255, 255, 255, 0.6);
+    width: 800px;
+    margin: 100px auto;
+    border-radius: 20px;
+    padding: 30px 0;
+}
+
+.account-container h2 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    color: #e86013;
+}
+
+.account-info {
+    width: 500px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item label {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: #202946;
+    font-weight: bold;
+    display: block;
+}
+
+.info-item span {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    color: #333;
+    display: block;
+    margin-top: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.logout-item {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.logout-item button {
+    background: #e86013;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.logout-item button:hover {
+    background: #202946;
+}
+
+.footer {
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 50px;
+    background-color: #202946;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.short-about {
+    height: fit-content;
+    max-width: 800px;
+    min-width: 350px;
+}
+
+.short-about h2 {
+    font-size: 40px;
+    color: #e86013;
+}
+
+.short-about p {
+    font-size: 25px;
+    color: white;
+}
+
+.follow-us {
+    height: fit-content;
+    width: fit-content;
+    display: block;
+}
+
+.follow-us h2 {
+    font-size: 40px;
+    color: #e86013;
+}
+
+.link img {
+    width: 70px;
+    height: 70px;
+    padding-right: 20px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.copyright {
+    background-color: #202946;
+    color: #e86013;
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    height: 50px;
+    margin-top: -30px;
+}
+
+
+@media (max-width: 800px) {
+    .navigation {
+        width: 100%;
+        height: 120px;
+        background-color: #202946;
+    }
+
+    .navigation .logo {
+        height: 100px;
+        background: url(fotot/headerlogo.png) left/cover no-repeat;
+        display: block;
+        width: 100px;
+        margin-left: 50px;
+        padding-top: 15px;
+    }
+
+    .navigation .nav {
+        float: right;
+        margin-top: -70px;
+        margin-right: 20px;
+    }
+
+    .nav a {
+        text-decoration: none;
+        padding-right: 10px;
+        font-size: 20px;
+        color: white;
+    }
+
+    .account-container {
+        width: 90%;
+        margin-top: 30px;
+        padding: 20px 0;
+    }
+
+    .account-info {
+        width: 90%;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 650px) {
+    .navigation {
+        width: 100%;
+        height: 100px;
+        background-color: #202946;
+    }
+
+    .navigation .logo {
+        height: 80px;
+        background: url(fotot/headerlogo.png) left/cover no-repeat;
+        display: block;
+        width: 80px;
+        margin-left: 50px;
+        padding-top: 15px;
+    }
+
+    .navigation .nav {
+        float: right;
+        margin-top: -60px;
+        margin-right: 20px;
+    }
+
+    .nav a {
+        text-decoration: none;
+        padding-right: 10px;
+        font-size: 17px;
+        color: white;
+    }
+}
+
+@media (max-width: 500px) {
+    .navigation {
+        width: 100%;
+        height: 70px;
+        background-color: #202946;
+    }
+
+    .navigation .logo {
+        height: 50px;
+        background: url(fotot/headerlogo.png) left/cover no-repeat;
+        display: block;
+        width: 50px;
+        margin-left: 15px;
+        padding-top: 15px;
+    }
+
+    .navigation .nav {
+        float: right;
+        margin-top: -45px;
+        margin-right: 10px;
+    }
+
+    .nav a {
+        text-decoration: none;
+        padding-right: 10px;
+        font-size: 13px;
+        color: white;
+    }
+}
+
+@media (max-width: 410px) {
+    .navigation {
+        width: 100%;
+        height: 60px;
+        background-color: #202946;
+    }
+
+    .navigation .logo {
+        height: 40px;
+        background: url(fotot/headerlogo.png) left/cover no-repeat;
+        display: block;
+        width: 40px;
+        margin-left: 15px;
+        padding-top: 15px;
+    }
+
+    .navigation .nav {
+        float: right;
+        margin-top: -40px;
+        margin-right: 10px;
+    }
+
+    .nav a {
+        text-decoration: none;
+        padding-right: 5px;
+        font-size: 10px;
+        color: white;
+    }
+}
