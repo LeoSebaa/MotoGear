@@ -1,0 +1,280 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f4f4f4;
+}
+
+.navigation {
+    width: 100%;
+    height: 150px;
+    background-color: #202946;
+    position: static;
+}
+
+.navigation .logo {
+    height: 130px;
+    background: url(fotot/headerlogo.png) left/cover no-repeat;
+    display: block;
+    width: 130px;
+    font-size: 80px;
+    margin-left: 80px;
+    padding-top: 10px;
+}
+
+.navigation .nav {
+    float: right;
+    margin-top: -80px;
+    padding-right: 20px;
+    margin-right: 70px;
+}
+
+.nav a {
+    text-decoration: none;
+    padding-right: 20px;
+    font-size: 20px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.nav a:hover {
+    color: #e86013;
+}
+
+.dashboard {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dashboard {
+    display: flex;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #202946;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    color: #e86013;
+    font-size: 24px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: #e86013;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.main-content h1 {
+    text-align: center;
+    color: #202946;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.table-section {
+    margin-bottom: 40px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: none;
+}
+
+.table-section.active {
+    display: block;
+}
+
+.table-section h2 {
+    color: #202946;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #202946;
+    color: white;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.add-btn, .delete-btn, .cancel-btn {
+    background-color: #e86013;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+.add-btn:hover, .delete-btn:hover, .cancel-btn:hover {
+    background-color: #202946;
+}
+
+.add-btn {
+    margin-bottom: 20px;
+}
+
+.footer {
+    margin-top: 20px;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 50px;
+    background-color: #202946;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.short-about {
+    height: fit-content;
+    max-width: 800px;
+    min-width: 350px;
+}
+
+.short-about h2 {
+    font-size: 40px;
+    color: #e86013;
+}
+
+.short-about p {
+    font-size: 25px;
+    color: white;
+}
+
+.follow-us {
+    height: fit-content;
+    width: fit-content;
+    display: block;
+}
+
+.follow-us h2 {
+    font-size: 40px;
+    color: #e86013;
+}
+
+.link img {
+    width: 70px;
+    height: 70px;
+    padding-right: 20px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.copyright {
+    background-color: #202946;
+    color: #e86013;
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    height: 50px;
+    margin-top: -30px;
+}
+
+
+@media (max-width: 800px) {
+    .navigation {
+        height: 120px;
+    }
+
+    .navigation .logo {
+        height: 100px;
+        width: 100px;
+        margin-left: 50px;
+    }
+
+    .navigation .nav {
+        margin-top: -70px;
+        margin-right: 20px;
+    }
+
+    .dashboard {
+        padding: 10px;
+    }
+
+    .table-section {
+        padding: 10px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navigation {
+        height: 70px;
+    }
+
+    .navigation .logo {
+        height: 50px;
+        width: 50px;
+        margin-left: 15px;
+    }
+
+    .navigation .nav {
+        margin-top: -45px;
+        margin-right: 10px;
+    }
+
+    .nav a {
+        font-size: 13px;
+        padding-right: 10px;
+    }
+
+    .dashboard h1 {
+        font-size: 30px;
+    }
+
+    .table-section h2 {
+        font-size: 24px;
+    }
+}
