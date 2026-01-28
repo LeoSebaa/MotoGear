@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Adventure Gear</title>
+</head>
+<body>
+
+    <header class="navigation">
+    <div class="logo" ></div>
+    <nav  class="nav" >
+      <a href="home.html" >Home</a>
+      <a href="products.html">Products</a>
+      <a href="aboutus.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="logInPage.html">LogIn</a>
+    
+      
+    </nav>
+    </header>
+    
+
+    <section>
+        <div class="foto">
+            <div class="txtS1">
+                <p class="p1">Ride Beyond Limits </p>
+                <p class="p2">Conquer the Mountains, Feel the Freedom</p>
+            </div>
+
+        </div>
+    </section>
+  
+     <section class="section2">
+    <p class="p1">Some of Our Products</p>
+    <div class="someProducts">
+      
+      <a href="--" class="product">
+        <img src="produktet/helmet_agv_1.jpg" alt="Helmet AGV Pista">
+        <p class="lloji_produktit">Helmet AGV-Pista</p>
+        <p class="cmimi_produktit">1700€</p>
+      </a>
+
+      <a href="--" class="product">
+        <img src="produktet/helmet_neotec3_2.jpg" alt="Helmet NeoTec 3">
+        <p class="lloji_produktit">Helmet NeoTec 3</p>
+        <p class="cmimi_produktit">950€</p>
+      </a>
+
+      <a href="--" class="product">
+        <img src="produktet/dainese_racing5_3.jpg" alt="Jacket Dainese Racing 5">
+        <p class="lloji_produktit">Jacket Dainese Racing 5</p>
+        <p class="cmimi_produktit">570€</p>
+      </a>
+
+      <a href="--" class="product">
+        <img src="produktet/daineseGL_carbon4_4.jpg" alt="Dainese Gloves Carbon 4">
+        <p class="lloji_produktit">Dainese Gloves Carbon 4</p>
+        <p class="cmimi_produktit">209€</p>
+      </a>
+
+      <a href="--" class="product">
+        <img src="produktet/aplinestarBo_SMX6 V3.jpg" alt="AlpineStar Boots MX6 V3">
+        <p class="lloji_produktit">AlpineStar Boots MX6 V3</p>
+        <p class="cmimi_produktit">329€</p>
+      </a>
+
+      <a href="--" class="product">
+        <img src="produktet/revit_sand5_h2_o_pants_black_.jpg" alt="Revit Pants Sand5">
+        <p class="lloji_produktit">Revit Pants Sand5</p>
+        <p class="cmimi_produktit">429€</p>
+      </a>
+      
+    </div>
+    </section>
+
+
+
+
+
+        <section class="section3">
+  <h2>What to Look for in Motorcycle Gear</h2>
+
+  <div class="guide">
+    <div class="card">
+      <h3>⚡ Safety Certifications</h3>
+      <p>Look for DOT, ECE, or Snell-rated helmets and CE-level armor for jackets and gloves.</p>
+    </div>
+
+    <div class="card">
+      <h3>🛡️ Materials & Protection</h3>
+      <p>Choose abrasion-resistant leather or reinforced textiles with strong stitching.</p>
+    </div>
+
+    <div class="card">
+      <h3>💨 Comfort & Fit</h3>
+      <p>Proper sizing, ventilation, adjustable straps, and quality padding improve comfort and safety.</p>
+    </div>
+
+    <div class="card">
+      <h3>🌧️ Weather Resistance</h3>
+      <p>Waterproof layers, thermal liners, and vented panels keep you ready for any ride.</p>
+    </div>
+
+    <div class="card">
+      <h3>🔦 Visibility</h3>
+      <p>Reflective strips and high-contrast colors help others see you on the road.</p>
+    </div>
+
+    <div class="card">
+      <h3>🏍️ Riding Style</h3>
+      <p>Choose gear based on whether you ride sport, touring, adventure, or off-road.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section  class="section4">
+     <div class="txts3">
+             <h2>Authorized Dealer</h2>
+          
+          <div class="slider-container">
+            <div class="slider">
+              <img src="logo_para_foter/alpinestar.jpg" alt="">
+              <img src="logo_para_foter/dainese.jpg" alt="">
+              <img src="logo_para_foter/revit.png" alt="">
+              <img src="logo_para_foter/shoei.jpg" alt="">
+              <img src="logo_para_foter/Logo-agv.svg.png" alt="">
+            </div>
+          </div>
+     </div>
+</section>
+
+
+
+
+<footer class="footer">
+  <div class="short-about">
+       <h2>About Us</h2>
+       <p>Premium motorcycle gear & accessories — safety-focused, rider-approved.
+         We provide certified helmets, jackets, and performance parts for every rider.</p>
+  </div>
+
+  <div class="follow-us">
+    <h2>Follow Us</h2>
+    <a href="" class="link"><img src="footer-social/insta.avif" alt=""></a>
+    <a href="" class="link"><img src="footer-social/facebook.png" alt=""></a>
+    <a href="" class="link"><img src="footer-social/tiktok.png" alt=""></a>
+    <a href="" class="link"><img src="footer-social/youtube.png" alt=""></a>
+  </div>
+
+</footer>
+<div class="copyright"><p>© 2025 Adventure Gear. All rights reserved.</p></div>
+
+
+</body>
+</html>
