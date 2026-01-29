@@ -8,16 +8,7 @@
 </head>
 <body>
 
-    <header class="navigation">
-    <div class="logo"></div>
-    <nav class="nav">
-      <a href="home.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="aboutus.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="logInPage.html">LogIn</a>
-    </nav>
-    </header>
+    <?php include_once 'navbar.php'; ?>
 
     <div class="account-container">
         <h2>My Account</h2>
@@ -39,7 +30,9 @@
                 <span>+1234567890</span>
             </div>
             <div class="logout-item">
+                <form method="POST" action="logout.php">
                 <button id="logoutBtn">Log Out</button>
+                </form>
             </div>
         </div>
     </div>

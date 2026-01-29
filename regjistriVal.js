@@ -1,11 +1,10 @@
-document.getElementById("registerBtn").addEventListener("click", function (e) {
-    e.preventDefault();  
+    document.getElementById("regjisterForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Always prevent default submission
 
     const name = document.getElementById("name");
     const surname = document.getElementById("surname");
     const email = document.getElementById("email");
     const password = document.getElementById("password");
-    const birthday = document.getElementById("birthday");
     const phone = document.getElementById("phone");
     const terms = document.getElementById("terms");
 
@@ -13,7 +12,6 @@ document.getElementById("registerBtn").addEventListener("click", function (e) {
     const surnameError = document.getElementById("surnameError");
     const emailError = document.getElementById("emailError");
     const passwordError = document.getElementById("passwordError");
-    const birthdayError = document.getElementById("birthdayError");
     const phoneError = document.getElementById("phoneError");
     const termsError = document.getElementById("termsError");
 
@@ -49,32 +47,16 @@ document.getElementById("registerBtn").addEventListener("click", function (e) {
     }
 
     const passwordVal = password.value;
-const passwordRegex = /^(?=(?:.*\d){2,})(?=.*[A-Z]).{6,}$/;
+    const passwordRegex = /^(?=(?:.*\d){2,})(?=.*[A-Z]).{6,}$/;
 
-if (passwordVal.trim() === "") {
-    passwordError.textContent = "Enter your password.";
-    valid = false;
-} else if (!passwordRegex.test(passwordVal)) {
-    passwordError.textContent =
-        "Password must be at least 6 characters, contain 1 uppercase letter and 2 numbers.";
-    valid = false;
-}
-
-    if (birthday.value === "") {
-        birthdayError.textContent = "Select your birth date.";
+    if (passwordVal.trim() === "") {
+        passwordError.textContent = "Enter your password.";
         valid = false;
-    } else {
-        const birthDate = new Date(birthday.value);
-        const today = new Date();
-        const age = today.getFullYear() - birthDate.getFullYear();
-        const m = today.getMonth() - birthDate.getMonth();
-        const d = today.getDate() - birthDate.getDate();
-        if (age < 18 || (age === 18 && (m < 0 || (m === 0 && d < 0)))) {
-            birthdayError.textContent = "U need to be atleast 18 years old to register.";
-            valid = false;
-        }
+    } else if (!passwordRegex.test(passwordVal)) {
+        passwordError.textContent =
+            "Password must be at least 6 characters, contain 1 uppercase letter and 2 numbers.";
+        valid = false;
     }
-
 
     if (phone.value.trim() === "") {
         phoneError.textContent = "Enter your phone number.";
@@ -90,6 +72,9 @@ if (passwordVal.trim() === "") {
     }
 
     if (valid) {
-        window.location.href = "logInPage.html";
+       
+        document.getElementById("regjisterForm").submit();
     }
+    
 });
+

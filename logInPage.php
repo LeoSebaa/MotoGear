@@ -1,3 +1,31 @@
+
+<?php
+session_start();
+include_once 'DataBase.php';
+include_once 'user.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $db = new Database();
+    $connection = $db->getConnection();
+    $user = new User($connection);
+
+    // Get form data
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Attempt to log in
+    if ($user->login($email, $password)) {
+        header("Location: home.php"); // Redirect to home page
+        exit;
+    } else {
+        echo "Invalid login credentials!";
+    }
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,21 +37,16 @@
 
 <body>
 
-<header class="navigation">
-    <div class="logo"></div>
-    <nav class="nav">
-        <a href="home.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="aboutus.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="logInPage.html">LogIn</a>
-    </nav>
-</header>
+<?php include_once 'navbar.php'; ?>
+
+
+
+
 
 <section>
 
    
-    <form class="login-box" id="loginForm">
+    <form class="login-box" id="loginForm" method="POST" action="logInPage.php">
         <h2>Login</h2>
 
         <input type="text" id="email" placeholder="email" />
@@ -34,7 +57,7 @@
 
         <p class="register-text" style="font-size:14px; margin-top:5px; color:#555;">
             Still not registered?
-            <a href="regjister.html" style="color:#e86013; text-decoration:none;">Register</a>
+            <a href="regjister.php" style="color:#e86013; text-decoration:none;">Register</a>
         </p>
 
         <input type="submit" id="loginBtn" value="Log In" />

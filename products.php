@@ -7,18 +7,8 @@
     <link rel="stylesheet" href="products.css">
 </head>
 <body>
-    <header class="navigation">
-    <div class="logo" ></div>
-    <nav  class="nav" >
-      <a href="home.html" >Home</a>
-      <a href="products.html">Products</a>
-      <a href="aboutus.html">About</a>
-        <a href="contact.html">Contact</a>
-      <a href="logInPage.html">LogIn</a>
     
-      
-    </nav>
-    </header>
+    <?php include_once 'navbar.php'; ?>
    
 
     <content>

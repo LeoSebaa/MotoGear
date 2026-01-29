@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,51 +16,37 @@
 </head>
 <body> 
 
-   <header class="navigation">
-    <div class="logo" ></div>
-    <nav  class="nav" >
-       <a href="home.html" >Home</a>
-      <a href="products.html">Products</a>
-      <a href="aboutus.html">About</a>
-        <a href="contact.html">Contact</a>
-      <a href="logInPage.html">LogIn</a>
-    
-      
-    </nav>
-    </header>
+   <?php include_once 'navbar.php'; ?>
+
+    <form class="regjister-form" id="regjisterForm" method="POST" action="regjister.php">
      <div class="tabela">
     <h2>Register</h2>
 
     <div class="shkrimet">
         <div class="ele">
-            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="name" name="name" placeholder="Name">
             <small class="error" id="nameError"></small>
         </div>
 
         <div class="ele">
-            <input type="text" id="surname" placeholder="Surname">
+            <input type="text" id="surname" name="surname" placeholder="Surname">
             <small class="error" id="surnameError"></small>
         </div>
 
         <div class="ele">
-            <input type="email" id="email" placeholder="Email">
+            <input type="email" id="email" name="email" placeholder="Email">
             <small class="error" id="emailError"></small>
         </div>
 
         <div class="ele">
-            <input type="password" id="password" placeholder="Password">
+            <input type="password" id="password" name="password" placeholder="Password">
             <small class="error" id="passwordError"></small>
         </div>
+        
 
         <div class="ele">
-            <p>Birthday:</p>
-            <input type="date" id="birthday">
-            <small class="error" id="birthdayError"></small>
-        </div>
-
-        <div class="ele">
-            <p>Phone Number</p>
-            <input type="text" id="phone" placeholder="Phone Number" style="background-color: white;">
+        
+            <input type="text" id="phone" name="phone" placeholder="Phone Number" style="background-color: white;">
             <small class="error" id="phoneError"></small>
         </div>
     </div>
@@ -74,9 +67,12 @@
     </div>
 
     <div class="ele">
-        <input type="submit" id="registerBtn" value="REGISTER">
+        <input type="submit" id="registerBtn" value="REGISTER" >
+  
     </div>
+</form>
 </div>
+
 
 
 
@@ -103,5 +99,34 @@
 
 
 
-<script src="regjister.js"></script>
+<script src="regjistriVal.js"></script>
 </html>
+
+
+    <?php
+include_once 'DataBase.php';
+include_once 'user.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $db = new Database();
+    $connection = $db->getConnection();
+    $user = new User($connection);
+
+    // Get form data
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $password = $_POST['password'];
+
+    // Register the user
+    $result = $user->register($name, $surname, $email, $phone, $password);
+    if ($result === true) {
+        header("Location: logInPage.php"); // Redirect to login page
+        exit;
+    } else {
+        echo "Error registering user: " . $result;
+    }
+}
+
+?>
