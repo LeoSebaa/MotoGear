@@ -1,3 +1,9 @@
+<?php
+session_start();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,19 +21,19 @@
         <div class="account-info">
             <div class="info-item">
                 <label>Name:</label>
-                <span>John</span>
+                <span><?php echo htmlspecialchars($_SESSION['name'] ?? 'N/A'); ?></span>
             </div>
             <div class="info-item">
                 <label>Surname:</label>
-                <span>Doe</span>
+                <span><?php echo htmlspecialchars($_SESSION['surname'] ?? 'N/A'); ?></span>
             </div>
             <div class="info-item">
                 <label>Email:</label>
-                <span>john.doe@example.com</span>
+                <span><?php echo htmlspecialchars($_SESSION['email'] ?? 'N/A'); ?></span>
             </div>
             <div class="info-item">
                 <label>Phone Number:</label>
-                <span>+1234567890</span>
+                <span><?php echo htmlspecialchars($_SESSION['phone'] ?? 'N/A'); ?></span>
             </div>
             <div class="logout-item">
                 <form method="POST" action="logout.php">

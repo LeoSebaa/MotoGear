@@ -1,3 +1,28 @@
+<?php
+session_start();
+include_once 'DataBase.php';
+include_once 'comentsMethod.php';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $db = new Database();
+    $connection = $db->getConnection();
+    $comment = new comment($connection);
+
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+    $date = date('Y-m-d');
+
+    
+    $result = $comment->addComment($name, $email, $message ,$date);
+    if ($result === true) {
+        header("Location: home.php");
+        exit;
+    } 
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

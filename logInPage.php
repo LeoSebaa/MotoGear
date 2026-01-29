@@ -49,10 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form class="login-box" id="loginForm" method="POST" action="logInPage.php">
         <h2>Login</h2>
 
-        <input type="text" id="email" placeholder="email" />
+        <input type="text" id="email" placeholder="email" name="email" />
         <span class="error" id="emailError"></span>
 
-        <input type="password" id="password" placeholder="Password" />
+        <input type="password" id="password" placeholder="Password" name="password" />
         <span class="error" id="passwordError"></span>
 
         <p class="register-text" style="font-size:14px; margin-top:5px; color:#555;">

@@ -1,3 +1,21 @@
+<?php
+session_start();
+include_once 'DataBase.php';
+include_once 'User.php';
+include_once 'comentsMethod.php';
+
+$database = new Database();
+$db = $database->getConnection();
+
+$user = new user($db);
+$users = $user->getAllUsers();
+
+$comment = new comment($db);
+$comments = $comment->getAllComments();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +36,12 @@
                 <li><a  class="nav-link" data-section="products">Products</a></li>
                 <li><a  class="nav-link" data-section="orders">Orders</a></li>
                 <li><a  class="nav-link" data-section="comments">Comments</a></li>
+                  <form method="POST" action="logOut.php">
+                <li><button type="submit" class="logout-btn" action="logout.php">Log Out</button></li>
+            </form>
+                
             </ul>
+            
         </div>
 
         <div class="main-content">
@@ -38,30 +61,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                      <?php foreach ($users as $u): ?>
+                      <tr>
+                           <td><?= $u['id'] ?></td>
+                           <td><?= htmlspecialchars($u['name'])?></td>
+                            <td><?= htmlspecialchars($u['surname']) ?></td>
+                            <td><?= htmlspecialchars($u['email']) ?></td>
+                           <td><?= htmlspecialchars($u['phone']) ?></td>
+                           <td><?= $u['role'] ?></td>
+</tr>
+<?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
@@ -155,20 +164,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                      <?php foreach ($comments as $c): ?>
+                      <tr>
+                           <td><?= $c['id'] ?></td>
+                           <td><?= htmlspecialchars($c['name']) ?></td>
+                           <td><?= htmlspecialchars($c['email']) ?></td>
+                           <td><?= htmlspecialchars($c['message']) ?></td>
+                           <td><?= $c['created_at'] ?></td>
+                      </tr>
+                      <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

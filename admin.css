@@ -90,6 +90,7 @@ body {
     background-color: #e86013;
 }
 
+
 .main-content {
     flex: 1;
 }
@@ -156,6 +157,7 @@ tr:hover {
 .add-btn:hover, .delete-btn:hover, .cancel-btn:hover {
     background-color: #202946;
 }
+
 
 .add-btn {
     margin-bottom: 20px;

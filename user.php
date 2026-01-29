@@ -32,7 +32,7 @@ class user {
     }
 
     public function login($email, $password) {
-        $query = "SELECT id, name, surname, email, phone, password FROM {$this->table_name} WHERE email = :email";
+        $query = "SELECT id, name, surname, email, phone, password, role FROM {$this->table_name} WHERE email = :email";
 
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':email', $email);
@@ -46,10 +46,23 @@ class user {
                 session_start();
                 $_SESSION['user_id'] = $row['id'];
                 $_SESSION['email'] = $row['email'];
+                $_SESSION['role'] = $row['role'] ;
+                $_SESSION['name'] = $row['name'];
+                $_SESSION['surname'] = $row['surname'];
+                $_SESSION['phone'] = $row['phone'];
                 return true;
             }
         }
         return false;
+    }
+
+    public function getAllUsers() {
+        $query = "SELECT id, name, surname, email, phone, role FROM {$this->table_name}";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 ?>

@@ -1,5 +1,31 @@
 
+    <?php
+include_once 'DataBase.php';
+include_once 'user.php';
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $db = new Database();
+    $connection = $db->getConnection();
+    $user = new User($connection);
+
+    // Get form data
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $password = $_POST['password'];
+
+    // Register the user
+    $result = $user->register($name, $surname, $email, $phone, $password);
+    if ($result === true) {
+        header("Location: logInPage.php"); // Redirect to login page
+        exit;
+    } else {
+        echo "Error registering user: " . $result;
+    }
+}
+
+?>
 
 
 
@@ -103,30 +129,3 @@
 </html>
 
 
-    <?php
-include_once 'DataBase.php';
-include_once 'user.php';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $db = new Database();
-    $connection = $db->getConnection();
-    $user = new User($connection);
-
-    // Get form data
-    $name = $_POST['name'];
-    $surname = $_POST['surname'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $password = $_POST['password'];
-
-    // Register the user
-    $result = $user->register($name, $surname, $email, $phone, $password);
-    if ($result === true) {
-        header("Location: logInPage.php"); // Redirect to login page
-        exit;
-    } else {
-        echo "Error registering user: " . $result;
-    }
-}
-
-?>

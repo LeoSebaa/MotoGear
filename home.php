@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,42 +30,42 @@
     <p class="p1">Some of Our Products</p>
     <div class="someProducts">
       
-      <a href="--" class="product">
+      <div class="product">
         <img src="produktet/helmet_agv_1.jpg" alt="Helmet AGV Pista">
         <p class="lloji_produktit">Helmet AGV-Pista</p>
         <p class="cmimi_produktit">1700€</p>
-      </a>
+      </div>
 
-      <a href="--" class="product">
+      <div class="product">
         <img src="produktet/helmet_neotec3_2.jpg" alt="Helmet NeoTec 3">
         <p class="lloji_produktit">Helmet NeoTec 3</p>
         <p class="cmimi_produktit">950€</p>
-      </a>
+      </div>
 
-      <a href="--" class="product">
+      <div class="product">
         <img src="produktet/dainese_racing5_3.jpg" alt="Jacket Dainese Racing 5">
         <p class="lloji_produktit">Jacket Dainese Racing 5</p>
         <p class="cmimi_produktit">570€</p>
-      </a>
+      </div>
 
-      <a href="--" class="product">
+      <div class="product">
         <img src="produktet/daineseGL_carbon4_4.jpg" alt="Dainese Gloves Carbon 4">
         <p class="lloji_produktit">Dainese Gloves Carbon 4</p>
         <p class="cmimi_produktit">209€</p>
-      </a>
+      </div>
 
-      <a href="--" class="product">
+      <div class="product">
         <img src="produktet/aplinestarBo_SMX6 V3.jpg" alt="AlpineStar Boots MX6 V3">
         <p class="lloji_produktit">AlpineStar Boots MX6 V3</p>
         <p class="cmimi_produktit">329€</p>
-      </a>
+      </div>
 
-      <a href="--" class="product">
+      <div class="product">
         <img src="produktet/revit_sand5_h2_o_pants_black_.jpg" alt="Revit Pants Sand5">
         <p class="lloji_produktit">Revit Pants Sand5</p>
         <p class="cmimi_produktit">429€</p>
-      </a>
-      
+      </div>
+
     </div>
     </section>
 

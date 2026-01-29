@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!doctype html>
 <html lang="sq">
 <head>
@@ -7,6 +12,9 @@
   <link rel="stylesheet" href="aboutus.css">
 </head>
 <body>
+
+
+
   <?php include_once 'navbar.php'; ?>
 
 <div class="image-background">
