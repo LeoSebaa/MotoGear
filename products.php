@@ -1,5 +1,11 @@
 <?php
 session_start();
+include_once 'DataBase.php';
+include_once 'productMethod.php';
+$database = new Database();
+$db = $database->getConnection();
+$product = new Product($db);
+$products = $product->getAllProducts();
 ?>
 
 <!DOCTYPE html>
@@ -18,24 +24,14 @@ session_start();
     <content>
        <h2>Our Products</h2>
       <div class="products-container">
-
-        <div class="product-card">
-          <img src="products-images/helmet.jpg" alt="Helmet" class="product-image">
-          <h2 class="product-name">Premium Helmet</h2>
-          <p class="product-price">$150</p>
-          <p class="product-description">High-quality helmet with advanced safety features.</p>
-          <a href="#" class="view-button">View Details</a>
-        </div>
-         <div class="product-card">
-          <img src="products-images/helmet.jpg" alt="Helmet" class="product-image">
-          <h2 class="product-name">Premium Helmet</h2>
-          <p class="product-price">$150</p>
-          <p class="product-description">High-quality helmet with advanced safety features.</p>
-          <a href="#" class="view-button">View Details</a>
-        </div>
-
-
-        
+        <?php foreach ($products as $prod): ?>
+          <div class="product-card">
+            <img src="data:image/jpeg;base64,<?php echo base64_encode($prod['image']); ?>" class="product-image">
+            <h2 class="product-name"><?php echo htmlspecialchars($prod['name']); ?></h2>
+            <p class="product-price">$<?php echo htmlspecialchars($prod['price']); ?></p>
+            <a href="view_products.php?id=<?php echo $prod['id']; ?>" class="view-button">View Details</a>
+          </div>
+        <?php endforeach; ?>
       </div>
     </content>
 

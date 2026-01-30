@@ -3,6 +3,7 @@ session_start();
 include_once 'DataBase.php';
 include_once 'User.php';
 include_once 'comentsMethod.php';
+include_once 'productMethod.php';
 
 $database = new Database();
 $db = $database->getConnection();
@@ -12,6 +13,33 @@ $users = $user->getAllUsers();
 
 $comment = new comment($db);
 $comments = $comment->getAllComments();
+
+$product = new Product($db);
+$products = $product->getAllProducts();
+
+$active_section = isset($_GET['section']) ? $_GET['section'] : 'products';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $active_section = 'products';
+    if (isset($_POST['add_product'])) {
+        $name = $_POST['name'];
+        $price = $_POST['price'];
+        $description = $_POST['description'];
+        if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+            $image = file_get_contents($_FILES['image']['tmp_name']);
+            $result = $product->addProduct($name, $price, $description, $image);
+            if ($result === true) {
+                $products = $product->getAllProducts();
+            }
+        }
+    } elseif (isset($_POST['delete_product'])) {
+        $product_id = $_POST['product_id'];
+        $result = $product->deleteProduct($product_id);
+        if ($result === true) {
+            $products = $product->getAllProducts();
+        }
+    }
+}
 ?>
 
 
@@ -32,10 +60,10 @@ $comments = $comment->getAllComments();
         <div class="sidebar">
             <h2>Navigation</h2>
             <ul>
-                <li><a  class="nav-link active" data-section="users">Users</a></li>
-                <li><a  class="nav-link" data-section="products">Products</a></li>
-                <li><a  class="nav-link" data-section="orders">Orders</a></li>
-                <li><a  class="nav-link" data-section="comments">Comments</a></li>
+                <li><a  class="nav-link <?php echo $active_section === 'users' ? 'active' : ''; ?>" data-section="users">Users</a></li>
+                <li><a  class="nav-link <?php echo $active_section === 'products' ? 'active' : ''; ?>" data-section="products">Products</a></li>
+                <li><a  class="nav-link <?php echo $active_section === 'orders' ? 'active' : ''; ?>" data-section="orders">Orders</a></li>
+                <li><a  class="nav-link <?php echo $active_section === 'comments' ? 'active' : ''; ?>" data-section="comments">Comments</a></li>
                   <form method="POST" action="logOut.php">
                 <li><button type="submit" class="logout-btn" action="logout.php">Log Out</button></li>
             </form>
@@ -47,7 +75,7 @@ $comments = $comment->getAllComments();
         <div class="main-content">
             <h1>Admin Dashboard</h1>
 
-            <div id="users" class="table-section active">
+            <div id="users" class="table-section <?php echo $active_section === 'users' ? 'active' : ''; ?>">
                 <h2>Users</h2>
                 <table class="users-table">
                     <thead>
@@ -75,9 +103,23 @@ $comments = $comment->getAllComments();
                 </table>
             </div>
 
-            <div id="products" class="table-section">
+            <div id="products" class="table-section <?php echo $active_section === 'products' ? 'active' : ''; ?>">
                 <h2>Products</h2>
-                <button class="add-btn">Add Product</button>
+                <div class="add-product-form">
+                    <form method="POST" action="admin.php"class="product-form" enctype="multipart/form-data">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" required>
+                        <label for="price">Price:</label>
+                        <input type="number" step="0.01" name="price" required>
+                        <label for="description">Description:</label>
+                        <textarea name="description" required></textarea>
+                        <br>
+                        <label for="image">Image:</label>
+                        <input type="file" name="image" required>
+                        <button type="submit" name="add_product">Add Product</button>
+                        
+                    </form>
+                </div>
                 <table class="products-table">
                     <thead>
                         <tr>
@@ -89,32 +131,25 @@ $comments = $comment->getAllComments();
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach ($products as $p): ?>
                         <tr>
-                            <td>1</td>
-                            <td>Helmet AGV-Pista</td>
-                            <td>High-quality helmet with advanced safety features.</td>
-                            <td>1700.00</td>
-                            <td><button class="delete-btn">Delete</button></td>
+                            <td><?php echo htmlspecialchars($p['id']); ?></td>
+                            <td><?php echo htmlspecialchars($p['name']); ?></td>
+                            <td><?php echo htmlspecialchars($p['description']); ?></td>
+                            <td><?php echo htmlspecialchars($p['price']); ?></td>
+                            <td>
+                                <form method="POST" style="display: inline;">
+                                    <input type="hidden" name="product_id" value="<?php echo $p['id']; ?>">
+                                    <button type="submit" name="delete_product" class="delete-btn">Delete</button>
+                                </form>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Jacket Dainese Racing 5</td>
-                            <td>Protective racing jacket with CE certification.</td>
-                            <td>570.00</td>
-                            <td><button class="delete-btn">Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Dainese Gloves Carbon 4</td>
-                            <td>Carbon fiber gloves for superior protection.</td>
-                            <td>209.00</td>
-                            <td><button class="delete-btn">Delete</button></td>
-                        </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
 
-            <div id="orders" class="table-section">
+            <div id="orders" class="table-section <?php echo $active_section === 'orders' ? 'active' : ''; ?>">
                 <h2>Orders</h2>
                 <table class="orders-table">
                     <thead>
@@ -151,7 +186,7 @@ $comments = $comment->getAllComments();
                 </table>
             </div>
 
-            <div id="comments" class="table-section">
+            <div id="comments" class="table-section <?php echo $active_section === 'comments' ? 'active' : ''; ?>">
                 <h2>Contact Messages</h2>
                 <table class="comments-table">
                     <thead>

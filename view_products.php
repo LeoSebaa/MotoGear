@@ -1,3 +1,25 @@
+<?php
+session_start();
+include_once 'DataBase.php';
+include_once 'productMethod.php';
+$database = new Database();
+$db = $database->getConnection();
+$productObj = new Product($db);
+
+if (isset($_GET['id'])) {
+    $product = $productObj->getProductById($_GET['id']);
+    if (!$product) {
+        echo "Product not found.";
+        exit;
+    }
+} else {
+    echo "No product ID provided.";
+    exit;
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,12 +36,12 @@
         <h1>Product Details</h1>
         <div class="product-container">
             <div class="product-gallery">
-                <img src="produktet/helmet_agv_1.jpg" alt="Product Image" class="product-image main-image">
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($product['image']); ?>" alt="Product Image" class="product-image main-image">
             </div>
             <div class="product-info">
-                <h2 class="product-name">AGV Helmet Model X</h2>
-                <p class="product-price">$299.99</p>
-                <p class="product-description">This is a high-quality motorcycle helmet designed for safety and comfort. It features advanced protection technology and a sleek design suitable for all riding conditions.</p>
+                <h2 class="product-name"><?php echo htmlspecialchars($product['name']); ?></h2>
+                <p class="product-price">$<?php echo htmlspecialchars($product['price']); ?></p>
+                <p class="product-description"><?php echo htmlspecialchars($product['description']); ?></p>
                 <div class="address-fields">
                     <input type="text" id="streetAddress" placeholder="Street Address" required>
                     <input type="text" id="cityStateZip" placeholder="City, State, ZIP" required>
@@ -27,8 +49,15 @@
                 <button class="order-button">Order Now</button>
             </div>
         </div>
-        <a href="products.html" class="back-button">Back to Products</a>
+        <a href="products.php" class="back-button">Back to Products</a>
     </section>
+
+
+
+
+
+
+
 
     <footer class="footer">
   <div class="short-about">
