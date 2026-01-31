@@ -1,5 +1,5 @@
     document.getElementById("regjisterForm").addEventListener("submit", function (e) {
-    e.preventDefault(); // Always prevent default submission
+    e.preventDefault(); 
 
     const name = document.getElementById("name");
     const surname = document.getElementById("surname");
