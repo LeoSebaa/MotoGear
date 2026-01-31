@@ -2,20 +2,42 @@
 session_start();
 include_once 'DataBase.php';
 include_once 'productMethod.php';
+include_once 'ordermethod.php';
 $database = new Database();
 $db = $database->getConnection();
 $productObj = new Product($db);
 
-if (isset($_GET['id'])) {
-    $product = $productObj->getProductById($_GET['id']);
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    $product_id = (int)$_GET['id'];
+    $product = $productObj->getProductById($product_id);
     if (!$product) {
         echo "Product not found.";
-        exit;
+        exit();
     }
 } else {
     echo "No product ID provided.";
-    exit;
+    exit();
 }
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_SESSION['user_id'])) {
+        $user_id = $_SESSION['user_id'];
+        $product_id = $_POST['product_id'];
+        $street_name = $_POST['street_name'];
+        $city_state = $_POST['city_state'];
+
+        if ($orderObj->addOrder($user_id, $product_id, $street_name, $city_state)) {
+            header("Location: products.php");
+            exit();
+        } else {
+            echo "Error placing order.";
+        }
+    } else {
+        echo "You must be logged in to place an order.";
+    }
+}
+
+
 ?>
 
 
@@ -43,10 +65,13 @@ if (isset($_GET['id'])) {
                 <p class="product-price">$<?php echo htmlspecialchars($product['price']); ?></p>
                 <p class="product-description"><?php echo htmlspecialchars($product['description']); ?></p>
                 <div class="address-fields">
-                    <input type="text" id="streetAddress" placeholder="Street Address" required>
-                    <input type="text" id="cityStateZip" placeholder="City, State, ZIP" required>
+                    <form  method="POST">
+                    <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+                    <input type="text" id="streetAddress" name="street_name" placeholder="Street Address" required>
+                    <input type="text" id="cityStateZip" name="city_state" placeholder="State/City example.." required>
+                    <button type="submit" class="order-button">Order Now</button>
+                </form>
                 </div>
-                <button class="order-button">Order Now</button>
             </div>
         </div>
         <a href="products.php" class="back-button">Back to Products</a>
@@ -77,21 +102,7 @@ if (isset($_GET['id'])) {
 </footer>
 <div class="copyright"><p>© 2025 Adventure Gear. All rights reserved.</p></div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const orderButton = document.querySelector('.order-button');
-        const streetAddress = document.getElementById('streetAddress');
-        const cityStateZip = document.getElementById('cityStateZip');
 
-        orderButton.addEventListener('click', function() {
-            if (streetAddress.value.trim() === '' || cityStateZip.value.trim() === '') {
-                alert('Please fill in both address fields before placing your order.');
-            } else {
-                alert('Thank you for your order! Hope you enjoy your new gear. It will be delivered next week.');
-            }
-        });
-    });
-</script>
 
 </body>
 </html>

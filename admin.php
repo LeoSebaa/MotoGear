@@ -4,6 +4,7 @@ include_once 'DataBase.php';
 include_once 'User.php';
 include_once 'comentsMethod.php';
 include_once 'productMethod.php';
+include_once 'ordermethod.php';
 
 $database = new Database();
 $db = $database->getConnection();
@@ -17,11 +18,14 @@ $comments = $comment->getAllComments();
 $product = new Product($db);
 $products = $product->getAllProducts();
 
+$order = new Order($db);
+$orders = $order->getAllOrders();
+
 $active_section = isset($_GET['section']) ? $_GET['section'] : 'products';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $active_section = 'products';
     if (isset($_POST['add_product'])) {
+        $active_section = 'products';
         $name = $_POST['name'];
         $price = $_POST['price'];
         $description = $_POST['description'];
@@ -33,10 +37,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     } elseif (isset($_POST['delete_product'])) {
+        $active_section = 'products';
         $product_id = $_POST['product_id'];
         $result = $product->deleteProduct($product_id);
         if ($result === true) {
             $products = $product->getAllProducts();
+        }
+    } elseif (isset($_POST['delete_order'])) {
+        $active_section = 'orders';
+        $order_id = $_POST['order_id'];
+        $result = $order->deleteOrder($order_id);
+        if ($result === true) {
+            $orders = $order->getAllOrders();
         }
     }
 }
@@ -159,29 +171,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <th>Product</th>
                             <th>Address</th>
                             <th>State</th>
-                            <th>Date</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach ($orders as $o): ?>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><button class="cancel-btn">Cancel Order</button></td>
+                            <td><?php echo htmlspecialchars($o['id']); ?></td>
+                            <td><?php echo htmlspecialchars($o['user_id']); ?></td>
+                            <td><?php echo htmlspecialchars($o['product_name']); ?></td>
+                            <td><?php echo htmlspecialchars($o['street_name']); ?></td>
+                            <td><?php echo htmlspecialchars($o['city_state']); ?></td>
+                            
+                            <td>
+                                <form method="POST" style="display: inline;">
+                                    <input type="hidden" name="order_id" value="<?php echo $o['id']; ?>">
+                                    <button type="submit" name="delete_order" class="cancel-btn" >Cancel Order</button>
+                                </form>
+                            </td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><button class="cancel-btn">Cancel Order</button></td>
-                        </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
@@ -234,3 +243,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <script src="admin.js"></script>
 </body>
 </html>
+
